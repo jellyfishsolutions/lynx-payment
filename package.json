@@ -1,0 +1,46 @@
+{
+    "name": "lynx-module-template",
+    "version": "0.0.1",
+    "description": "the base template project for lynx modules",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "gulp build",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepublishOnly": "npm run build",
+        "postinstall": "mv dist/* ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jellyfishsolutions/lynx-module-template.git"
+    },
+    "keywords": [
+        "lynx",
+        "admin-ui",
+        "module"
+    ],
+    "author": "Luca Roverelli <luca.roverelli@gmail.com>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/jellyfishsolutions/lynx-module-template/issues"
+    },
+    "homepage": "https://github.com/jellyfishsolutions/lynx-module-template#readme",
+    "dependencies": {
+        "lynx-framework": "1.x"
+    },
+    "devDependencies": {
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-jsdoc3": "^3.0.0",
+        "gulp-typescript": "^5.0.1",
+        "gulp-sourcemaps": "^3.0.0",
+        "merge2": "^1.4.1",
+        "path": "^0.12.7",
+        "typescript": "^4.1.3"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true
+    }
+}
