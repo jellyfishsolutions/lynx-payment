@@ -1,3 +1,24 @@
 {
-    "template.hello-world": "Hello world!"
+    "p.amount": "Amount",
+    "p.buy-credits": "Buy Credits",
+    "p.card-payment": "Pay by Card",
+    "p.card-holder": "Card Holder",
+    "p.card-info": "Card Information",
+    "p.checkout": "Checkout",
+    "p.close": "Close",
+    "p.credits": "Credits",
+    "p.credits-pay": "Pay with credits",
+    "p.credits-payment": "Pay with Credits",
+    "p.currency": "Currency",
+    "p.description": "Description",
+    "p.go-on": "Go On",
+    "p.go-to-payment": "Go to Payment",
+    "p.pay": "Pay",
+    "p.payment-error": "Payment Error",
+    "p.payment-successfully-done": "Payment Successfully done!",
+    "p.paypal": "Paypal",
+    "p.purchase": "Purchase",
+    "p.route": "Route",
+    "p.select-payment-method": "Select Payment Method",
+    "p.stripe": "Stripe"
 }

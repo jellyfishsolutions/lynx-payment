@@ -1,0 +1,60 @@
+<form id="payment-form">
+    <div class="row justify-content-center">
+        <div class="col-sm-6" style="margin: auto">
+            <div class="card shadow mb-4" >
+                <div class="card-header d-flex">
+                    <h3>{{ 'p.checkout' | tr }}</h3>
+                </div>
+                <div class="card-container">
+                    <div class="container">
+                        {{ utils.alert(flash) }}
+                        <div class="row col-12">
+                            <div class="no-padding-media row d-flex flex-column">
+                                <div class="payment-text">
+                                    <h5>{{ "p.amount" | tr }}:</h5>
+                                </div>
+                                <div class="p-2 payment-text">
+                                    <h5>{{ createData.data.symbol }}
+                                        {{ createData.data.amount }}</h5>
+                                </div>
+                            </div>
+                            <div class="card-divider col-1 vertical-divider"></div>
+                            <hr class="horizontal-divider">
+                            <div class="no-padding-media row d-flex flex-column justify-content-between" >
+                                <div class="payment-text" style="margin-bottom: 15px;">
+                                    <h5>{{ "p.card-payment" | tr }}</h5>
+                                </div>
+                                <div class="d-flex flex-column">
+                                    <div>
+                                        {{ "p.card-info" | tr }}
+                                    </div>
+                                    <div class="method row">
+                                        <div id="card-number" class="w-100 p-2"></div>
+                                        <!--<div class="col-md col-0 p-1 stripe-img"><img src="/payments/img/credit-cards.svg" ></div>-->
+                                        <div class="w-100" style="height: 0px"></div>
+                                        <div id="card-expiry" class="col p-2" style="border-right: 1px solid #e3e6f0; border-top: 1px solid #e3e6f0;"></div>
+                                        <div class="row col no-padding-media" >
+                                            <div class="col p-2" id="card-cvc" style="border-top: 1px solid #e3e6f0;"></div>
+                                            <div class="col" style="width:auto; height: 100%; border-top: 1px solid #e3e6f0;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="no-padding-media d-flex justify-content-end container payment-btn">
+                                <div>
+                                    {% set _route = route('checkout-result', {uuid: uuid}) %}
+                                    <button id="submit" value="Paga" data-secret="{{ createData.data.clientSecret }}" data-route="{{ _route }}" class="m-2 btn btn-primary">
+                                        <span>{{'p.pay' | tr}}</span>
+                                    </button>
+                                    <div id="loader" hidden class="spinner-border text-primary" role="status">
+                                        <span class="sr-only">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

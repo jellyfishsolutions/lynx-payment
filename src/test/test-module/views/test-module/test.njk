@@ -1,0 +1,56 @@
+{% extends resolvePath('/test-module/layout') %}
+{% import resolvePath("/lynx/utils")as utils %}
+
+{% block additionaljs %}{% endblock %}
+
+{% block content %}
+    <form action="{{route('test-do')}}" method="POST">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card shadow mb-4" >
+                    <div class="card-header d-flex">
+                        <h3>{{ 'p.purchase' | tr }}</h3>
+
+                    </div>
+                    <div class="card-container">
+                        {{ utils.alert(flash) }}
+                        <div class="p-5 row justify-content-center">
+                            <div class="col-8 form-group">
+                                <label for="amount">
+                                    {{ "p.amount" | tr }}</label>
+                                <input type="number" class="form-control form-control-user" name="amount" id="amount" min="0.50" step="0.01">
+                            </div>
+                            <div class="col-8 form-group">
+                                <label for="currency">
+                                    {{ "p.currency" | tr }}</label>
+                                <select id="status" class="form-control form-control-user" autocomplete="off" name="currency">
+                                    <option value="eur" selected=true>€</option>
+                                    <option value="usd">$</option>
+                                    <option value="gbp">£</option>
+
+                                </select>
+
+                            </div>
+                            <div class="col-8 form-group">
+                                <label for="cb">
+                                    {{ "p.route" | tr }}</label>
+                                <input type="text" class="form-control form-control-user" name="cb" id="cb">
+                            </div>
+                            <div class="col-8 form-group">
+                                <label for="description">
+                                    {{ "p.description" | tr }}</label>
+                                <textarea rows="5" class="form-control form-control-user" name="description" id="description"></textarea>
+                            </div>
+                            <div class="p-2 col-8">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-cart"></i>
+                                    <span>{{'p.go-to-payment' | tr}}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}

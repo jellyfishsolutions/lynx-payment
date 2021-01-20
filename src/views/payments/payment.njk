@@ -1,0 +1,70 @@
+{% extends resolvePath(data.payment.layout) %}
+{% import resolvePath("/lynx/utils")as utils %}
+
+{% block additional_styles %}
+    <link href="/payments/payments-style.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <form action="{{route('checkout-do', {uuid:uuid})}}" method="POST">
+        <div class="row justify-content-center">
+            <div class="col-sm-6" style="margin: auto">
+                <div class="card shadow mb-4" >
+                    <div class="card-header">
+                        <h3>{{ 'p.checkout' | tr }}</h3>
+                    </div>
+                    <div class="card-container">
+                        <div class="container">
+                            {{ utils.alert(flash) }}
+                            <div id="payment-card" class="row col-12">
+                                <div class="no-padding-media row col-sm-4 d-flex flex-column container">
+                                    <div class="payment-text">
+                                        <h5>{{ "p.amount" | tr }}:</h5>
+                                    </div>
+                                    <div class="p-2 payment-text">
+                                        <h5>
+                                            <div class="mb-2">{{ data.payment.getCurrencySymbol() }}
+                                                {{ data.payment.getAmount() }}
+                                            </div>
+                                            {% if data.payment.data.credits %}
+                                                {{ "p.credits" | tr }}
+                                                {{ data.payment.data.credits }}
+                                            {% endif %}
+                                        </h5>
+                                    </div>
+                                    <div id="payment-description">
+                                        {{ data.payment.description }}
+                                    </div>
+                                </div>
+                                <div class="card-divider col-1 vertical-divider"></div>
+                                <hr class="horizontal-divider">
+                                <div class="no-padding-media row col-sm-7 d-flex flex-column justify-content-between container" >
+                                    <div class="payment-text" style="margin-bottom: 15px">
+                                        <h5>{{ "p.select-payment-method" | tr }}</h5>
+                                    </div>
+                                    {% for method in data.methods %}
+                                        <div id="payment-method" class="row method">
+                                            <div class="align-self-center col-9 order-md-1 order-2 radioLeft" style="display: block">
+                                                <input class="m-2" type="radio" id="{{ method.name }}" name="method" value="{{ method.id }}" required>{{ ("p." + method.name) | tr }}</input>
+                                            </div>
+                                            <div class="align-self-center p-2 col-3 order-md-2 order-1" style="text-align: right">
+                                                <img src="/payments/img/{{ method.name }}.svg" alt="{{ method }}">
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                                <div class="no-padding-media d-flex container payment-btn justify-content-end">
+                                    <button type="submit" class="m-2 btn btn-primary">
+                                        <span>{{'p.go-on' | tr}}</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

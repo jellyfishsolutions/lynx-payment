@@ -1,0 +1,37 @@
+{% extends resolvePath(createData.data.layout) %}
+{% import resolvePath("/lynx/utils")as utils %}
+
+{% block additional_styles %}
+    <link href="/payments/payments-style.css" rel="stylesheet">
+{% endblock %}
+
+{% block additional_scripts %}
+    {% if createData %}
+        {% include resolvePath(createData.viewJs) %}
+    {% endif %}
+{% endblock %}
+
+{% block content %}
+    {% if createData %}
+        {% include resolvePath(createData.viewHtml) %}
+    {% else %}
+        <div class="row justify-content-center">
+            <div class="card shadow mb-4" >
+                <div class="card-container">
+                    <div class="container">
+                        {{ utils.alert(flash) }}
+                        <div class="row">
+                            <div class="card-divider col-1"></div>
+                            <div class="no-padding-media d-flex justify-content-end container payment-btn">
+                                <button id="close" type="button" style="margin-top: 15px;" class="btn btn-primary">
+                                    <span>{{ "p.close" | tr }}</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+{% endblock %}

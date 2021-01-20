@@ -1,0 +1,10 @@
+<script src="https://js.stripe.com/v3/"></script>
+<script src="https://checkout.stripe.com/checkout.js"></script>
+{% if createData %}
+    <script type="text/javascript">
+        var currency = '{{createData.data.currency}}';
+        var amount = '{{createData.data.amount}}';
+        var pk = '{{createData.data.publicKey}}';
+    </script>
+    <script type="text/javascript" src="/payments/js/stripe.js"></script>
+{% endif %}

@@ -1,0 +1,79 @@
+#payment-card {
+    flex-direction: row;
+}
+
+#payment-description {
+    margin-top: 10px;
+}
+
+.vertical-divider {
+    visibility: visible;
+}
+
+.horizontal-divider {
+    visibility: hidden;
+}
+
+#content {
+    background-color: #f8f9fc;
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+}
+
+.radioLeft {
+    text-align: left;
+}
+
+@media (max-width: 540px) {
+    #content {
+        overflow-y: hidden;
+    }
+
+    #payment-card {
+        flex-direction: column;
+    }
+
+    .vertical-divider {
+        visibility: hidden;
+    }
+
+    .horizontal-divider {
+        visibility: visible;
+        width: 100%;
+    }
+
+    #payment-description {
+        margin-top: 10px;
+    }
+
+    .payment-text h5 {
+        margin: 5px;
+    }
+
+    .payment-btn {
+        justify-content: start !important;
+    }
+
+    .no-padding-media {
+        padding: 0 !important;
+    }
+
+    .stripe-img {
+        visibility: hidden;
+        width: 0;
+    }
+
+    .stripe-img image {
+        visibility: hidden;
+        width: 0;
+    }
+
+    .row {
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .radioLeft {
+        text-align: right;
+    }
+}

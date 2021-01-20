@@ -1,13 +1,13 @@
 {
-    "name": "lynx-module-template",
+    "name": "lynx-payments",
     "version": "0.0.1",
-    "description": "the base template project for lynx modules",
+    "description": "Payment module for the Lynx framework",
     "main": "dist/index.js",
     "scripts": {
         "build": "gulp build",
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepublishOnly": "npm run build",
-        "postinstall": "mv dist/* ."
+        "postinstall": "#mv dist/* ."
     },
     "repository": {
         "type": "git",
@@ -15,7 +15,8 @@
     },
     "keywords": [
         "lynx",
-        "admin-ui",
+        "payment",
+        "stripe",
         "module"
     ],
     "author": "Luca Roverelli <luca.roverelli@gmail.com>",
@@ -25,14 +26,19 @@
     },
     "homepage": "https://github.com/jellyfishsolutions/lynx-module-template#readme",
     "dependencies": {
-        "lynx-framework": "1.x"
+        "lynx-admin-ui": "0.x",
+        "lynx-datagrid": "0.x",
+        "lynx-framework": "1.x",
+        "stripe": "^8.49.0",
+        "uuid": "^8.3.2"
     },
     "devDependencies": {
+        "@types/uuid": "^8.3.0",
         "del": "^6.0.0",
         "gulp": "^4.0.2",
         "gulp-jsdoc3": "^3.0.0",
-        "gulp-typescript": "^5.0.1",
         "gulp-sourcemaps": "^3.0.0",
+        "gulp-typescript": "^5.0.1",
         "merge2": "^1.4.1",
         "path": "^0.12.7",
         "typescript": "^4.1.3"

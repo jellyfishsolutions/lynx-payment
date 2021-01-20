@@ -1,3 +1,24 @@
 {
-    "template.hello-world": "Ciao mondo!"
+    "p.amount": "Importo",
+    "p.buy-credits": "Acquista Crediti",
+    "p.card-payment": "Paga con la carta",
+    "p.card-holder": "Titolare della carta",
+    "p.card-info": "Informazioni sulla carta",
+    "p.checkout": "Pagamento",
+    "p.close": "Chiudi",
+    "p.credits": "Crediti",
+    "p.credits-pay": "Pagamento con crediti",
+    "p.credits-payment": "Paga con i crediti",
+    "p.currency": "Valuta",
+    "p.description": "Descrizione",
+    "p.go-on": "Continua",
+    "p.go-to-payment": "Vai al pagamento",
+    "p.pay": "Paga",
+    "p.payment-error": "Errore nel pagamento",
+    "p.payment-successfully-done": "Pagamento effettuato con successo!",
+    "p.paypal": "Paypal",
+    "p.purchase": "Acquisto",
+    "p.route": "Route",
+    "p.select-payment-method": "Seleziona il metodo di pagamento",
+    "p.stripe": "Stripe"
 }
